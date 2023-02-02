@@ -1,0 +1,9 @@
+sudo docker --version   :to get the version of docker
+sudo docker images      :to list all the images in the docker
+sudo docker ps          :to list all the containers
+sudo docker ps -a       :to list all the deleted containers
+sudo docker pull <repo_name>: to pull any repo or images from the registry
+sudo docker build -t myimage . :to buil any image 
+sudo docker run -it myimage python <file_name>: to run any image that build latest
+sudo docker image push myusername/etlexample:latest  :to push image to docker hub
+sudo docker image tag etlexample:latest myusername/etlexample:latest
