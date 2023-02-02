@@ -1,0 +1,14 @@
+pipeline {
+    agent {
+        docker {
+            image 'python:3.8'
+        }
+    }
+    stages {
+        stage('Pull Docker Image') {
+            steps {
+                sh 'docker pull image_name:tag'
+            }
+        }
+    }
+}
