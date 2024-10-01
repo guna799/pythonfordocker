@@ -10,6 +10,7 @@ env:
 
 jobs:
   test:
+  if: ${{ ROLLBACK == 'true' }}
     runs-on: ubuntu-latest
     steps:
       - name: Testing variables functions
