@@ -1,14 +1,13 @@
 name: hello-world
-on: push
+'on': push
 jobs:
   my-job:
     runs-on: ubuntu-latest
     steps:
       - name: my-step
         run: echo "Hello World!"
-  
   Test:
-    runs-on : ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
-      - name : Printing
-      run: echo "Hi Guna, welcome to Github actions"
+      - name: Printing
+        run: 'echo "Hi Guna, welcome to Github actions"'
