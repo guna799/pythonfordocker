@@ -1,28 +1,29 @@
 name: hello-world
-'on': push
+on: push
 jobs:
   my-job:
     runs-on: ubuntu-latest
     steps:
       - name: my-step
         run: echo "Hello World!"
+        
   Test:
     runs-on: ubuntu-latest
     steps:
       - name: Printing
-        run: 'echo "Hi Guna, welcome to Github actions"'
+        run: echo "Hi Guna, welcome to Github actions"
 
-name : test-Ubuntu
-'on' : push
+name: test-Ubuntu
+on: push
 jobs: 
   Get-path:
-  runs-on: ubuntu-latest
-  steps:
-    - name: get-path
-      run : pwd
+    runs-on: ubuntu-latest
+    steps:
+      - name: get-path
+        run: pwd
   
   Create-dir:
-  runs-on : ubuntu-latest
-  steps:
-    - name: Directory
-      run : mkdir Actions
+    runs-on: ubuntu-latest
+    steps:
+      - name: Directory
+        run: mkdir Actions
