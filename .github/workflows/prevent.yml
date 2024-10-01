@@ -1,0 +1,32 @@
+name: Prevent-triggers
+on : push
+  branch : 'main'
+    paths:
+      - .github/workflows/prevent.yml
+jobs:
+  Build:
+  runs-on : ubuntu-latest
+  steps:
+    - name : Build Stage
+      run : echo " This is Build stage"
+
+  Test:
+  needs: Build
+  runs-on : ubuntu-latest
+  steps:
+    - name : Test-stage
+      run: echo " This is test stage"
+
+  Deploy:
+  needs: Test
+  runs-on : ubuntu-latest
+  steps:
+    -name : Deploy stage
+    run : echo " This is Deploy stage " 
+
+  Notify:
+  needs: Deploy
+  runs-on : ubuntu-latest
+  steps:
+    - name: Notify-stage
+      run : echo : this is notify stage"       
