@@ -6,6 +6,8 @@ on:
       - master
 env : 
   MY_VARIABLE : Guna
+  rollback : true
+  rollback_version: 1.1.4
 
 jobs:
   build:
@@ -16,3 +18,5 @@ jobs:
 
       - name: Use GitHub variable
         run: echo $MY_VARIABLE
+        run: echo $rollback
+        run : echo $rollback_version
