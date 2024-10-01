@@ -1,6 +1,6 @@
 name: Prevent-triggers
 on : push
-  branch : 'master'
+  branches : 'master'
     paths:
       - .github/workflows/prevent.yml
 jobs:
@@ -29,4 +29,4 @@ jobs:
   runs-on : ubuntu-latest
   steps:
     - name: Notify-stage
-      run : echo : this is notify stage"       
+      run : echo : this is notify stage" 
