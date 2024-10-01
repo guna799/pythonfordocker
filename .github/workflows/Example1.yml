@@ -8,18 +8,21 @@ jobs:
         run: echo "Hello World!"
         
   Test:
+    needs: my-job
     runs-on: ubuntu-latest
     steps:
       - name: Printing
         run: echo "Hi Guna, welcome to Github actions"
 
   Get-path:
+    needs: Test
     runs-on: ubuntu-latest
     steps:
       - name: get-path
         run: pwd
   
   Create-dir:
+    needs: Get-path
     runs-on: ubuntu-latest
     steps:
       - name: Directory
