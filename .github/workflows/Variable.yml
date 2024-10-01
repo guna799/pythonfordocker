@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - master
+env : 
+  MY_VARIABLE : Guna
 
 jobs:
   build:
@@ -13,4 +15,4 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Use GitHub variable
-        run: echo "The variable is: ${{ vars.MY_VARIABLE }}"
+        run: echo $MY_VARIABLE
