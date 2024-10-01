@@ -13,9 +13,6 @@ jobs:
       - name: Printing
         run: echo "Hi Guna, welcome to Github actions"
 
-name: test-Ubuntu
-on: push
-jobs: 
   Get-path:
     runs-on: ubuntu-latest
     steps:
