@@ -1,36 +1,13 @@
-name: Conditional Job Example
-
-on: 
-  push:
-    branches:
-      - master
-
+name : variables testing
+on : push
 env: 
   MY_VARIABLE: Guna
   ROLLBACK: true
   ROLLBACK_VERSION: 1.1.4
 
 jobs:
-  deploy:
-    if: ${{ROLLBACK}} == 'true'
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out code
-        uses: actions/checkout@v2
-
-      - name: Deploy application
-        run: |
-          echo "Deploying the application..."
-          # Add your deployment script here
-
   test:
-    if: $ROLLBACK != 'true'
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out code
-        uses: actions/checkout@v2
-
-      - name: Run tests
-        run: |
-          echo "Running tests..."
-          # Add your testing script here
+  runs-on : ubuntu-latest
+  steps:
+    - name : testing variables functions
+      run : echo $ROLLBACK
