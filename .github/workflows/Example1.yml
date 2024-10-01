@@ -11,3 +11,18 @@ jobs:
     steps:
       - name: Printing
         run: 'echo "Hi Guna, welcome to Github actions"'
+
+name : Test-Ubuntu
+on : push
+jobs: 
+  Get-path:
+  runs-on: ubuntu-latest
+  steps:
+    - name: get-path
+      run : pwd
+  
+  Create-dir:
+  runs-on : ubuntu-latest
+  steps:
+    - name: Directory
+      run : mkdir Actions
