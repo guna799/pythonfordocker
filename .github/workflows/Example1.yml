@@ -10,5 +10,5 @@ jobs:
   Test:
     runs-on : ubuntu-latest
     steps:
-      -name : Printing
+      - name : Printing
       run: echo "Hi Guna, welcome to Github actions"
