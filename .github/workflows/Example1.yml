@@ -1,7 +1,7 @@
 name: hello-world
 on: push
-  branch: master
-    folder: pythonfordocker/.github/workflows/Example1.yml
+  branch: "master"
+    paths: pythonfordocker/.github/workflows/Example1.yml
 jobs:
   my-job:
     runs-on: ubuntu-latest
