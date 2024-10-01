@@ -1,22 +1,36 @@
-name: Use Variable Example
+name: Conditional Job Example
 
 on: 
   push:
     branches:
       - master
-env : 
-  MY_VARIABLE : Guna
-  rollback : true
-  rollback_version: 1.1.4
+
+env: 
+  MY_VARIABLE: Guna
+  ROLLBACK: true
+  ROLLBACK_VERSION: 1.1.4
 
 jobs:
-  build:
+  deploy:
+    if: ${{ env.ROLLBACK == 'true' }}
     runs-on: ubuntu-latest
     steps:
       - name: Check out code
         uses: actions/checkout@v2
 
-      - name: Use GitHub variable
-        run: 
-          echo $MY_VARIABLE
-          echo $rollback
+      - name: Deploy application
+        run: |
+          echo "Deploying the application..."
+          # Add your deployment script here
+
+  test:
+    if: ${{ env.ROLLBACK != 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: Run tests
+        run: |
+          echo "Running tests..."
+          # Add your testing script here
