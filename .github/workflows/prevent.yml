@@ -1,6 +1,6 @@
 name: Prevent-triggers
 on : push
-  branch : 'main'
+  branch : 'master'
     paths:
       - .github/workflows/prevent.yml
 jobs:
