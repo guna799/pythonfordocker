@@ -1,5 +1,8 @@
-name : variables testing
-on : push
+name: variables testing
+
+on: 
+  push:
+
 env: 
   MY_VARIABLE: Guna
   ROLLBACK: true
@@ -7,7 +10,7 @@ env:
 
 jobs:
   test:
-  runs-on: ubuntu-latest
-  steps:
-    - name : testing variables functions
-      run : echo $ROLLBACK
+    runs-on: ubuntu-latest
+    steps:
+      - name: Testing variables functions
+        run: echo $ROLLBACK
