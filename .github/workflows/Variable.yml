@@ -12,7 +12,7 @@ env:
 
 jobs:
   deploy:
-    if: $ROLLBACK == 'true'
+    if: ${{ROLLBACK}} == 'true'
     runs-on: ubuntu-latest
     steps:
       - name: Check out code
