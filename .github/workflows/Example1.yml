@@ -1,20 +1,25 @@
 name: hello-world
-on: push
-  branch: "master"
-    paths: pythonfordocker/.github/workflows/Example1.yml
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - '.github/workflows/Example1.yml'
+
 jobs:
   my-job:
     runs-on: ubuntu-latest
     steps:
       - name: my-step
         run: echo "Hello World!"
-        
+
   Test:
     needs: my-job
     runs-on: ubuntu-latest
     steps:
       - name: Printing
-        run: echo "Hi Guna, welcome to Github actions"
+        run: echo "Hi Guna, welcome to GitHub Actions"
 
   Get-path:
     needs: Test
@@ -22,7 +27,7 @@ jobs:
     steps:
       - name: get-path
         run: pwd
-  
+
   Create-dir:
     needs: Get-path
     runs-on: ubuntu-latest
