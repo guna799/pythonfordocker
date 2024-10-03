@@ -1,0 +1,13 @@
+name : Workflow input Example
+on : 
+	workflow_dipatch:
+		inputs:
+			environment:
+			required: true
+			default : 'production'
+
+jobs:
+	deploy:
+		runs-on : ubuntu-latest
+		steps:
+			- run : echo " Deploying to ${{github.event.inputs.environment }} environment "
