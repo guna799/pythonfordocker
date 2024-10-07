@@ -1,0 +1,19 @@
+name: Github-Teams-Notification
+on : push
+jobs: 
+  Notify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: martialonline/workflow-status@v3
+        id: check
+      - run: echo "Workflow  Failed" 
+        if : steps.check.outputs.status =='failure'
+      - run: echo "Workflow was cancelled" 
+        if: steps.check.outputs.status == 'cancelled'
+      - run: echo "Workflow is successful" 
+        if: steps.check.outputs.status == 'success'
+      - run : echo " ${{steps.check.outputs.status}}" 
+      -  uses: neonidian/teams-notify-build-status@v3
+         with:
+          webhookUrl: ${{ secrets.TEAMS_WEBHOOK_URL }}
+          message: "${{ github.job }} job in  workflow ${{ github.workflow }} of ${{ github.repository }} has ${{steps.check.outputs.status}} "
